@@ -1,3 +1,11 @@
 /*******************************
          Site Overrides
 *******************************/
+
+
+.ui.vertical.steps .step:after {
+    display: block;
+    top: 100%;
+    left: 50%;
+    transform: translateY(-50%) translateX(50%) rotate(45deg);
+}

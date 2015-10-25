@@ -16,3 +16,4 @@ span.nl {
 span.s1 {
     color: lighten(@purple, 45);
 }
+

@@ -1,22 +1,25 @@
-        <div class="column">
+        <div class="nine wide column">
             <div class="feature">
-                <h1 class="header"><a href="/open-source/{{ include.project.label }}/{{ include.firstPage..title | slugify }}.html">{{ project.label }}</a></h1>
+                <h2><a class=" ui {{include.project.accentColor}} header" href="/open-source/{{ include.project.label }}/{{ include.firstPage..title | slugify }}.html">{{ project.label }}</a></h2>
                 {% if include.project.shorter %}
                 <div class="description">
                     {% for paragraph in include.project.shorter %}
                     <p>{{ paragraph | markdownify }}</p>
                     {% endfor %}
+                    {% for p in pages %}
+                    <a class="ui compact {{include.project.accentColor}} button" href="/open-source/{{ project.label }}/{{ p.title | slugify }}.html">
+                        <i class="{{p.icon}} icon"></i>
+                        {{ p.title }} 
+                    </a>
+                    {% endfor %}
+                    {% if project.github %}
+                    <a class="ui compact {{include.project.accentColor}} button" href="{{ project.github }}" target="_blank">
+                        <i class="github icon"></i>
+                        Github
+                    </a>
+                    {% endif %}
+
                 </div>
                 {% endif %}
-                <div class="ui basic buttons">
-                    {% for page in include.pages %}
-                    <div class="ui button">
-                        <a href="/open-source/{{ include.project.label }}/{{ page.title | slugify }}.html">{{ page.title }}</a>
-                    </div>
-                    {% endfor %}
-                    {% if include.project.github %}
-                    <div class="ui button"><a href="{{ include.project.github }}"><i class="github icon"></i>Github</a></div>
-                    {% endif %}
-                </div>
             </div>
         </div>

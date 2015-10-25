@@ -1,9 +1,17 @@
 ---
 ---
 
-@mainColor: #487AAE;
+@mainColor: #445569;
 @hightlightColor: #56B68B;
 @softColor: #F7F5F3;
+
+body {
+    background: #2F363D;
+}
+
+#root {
+    border: 0;
+}
 
 #header,
 #description,
@@ -14,12 +22,15 @@
 
 #header {
     background: @mainColor;
+    border-color: @mainColor;
     
     .ui.large.menu .header.item {
         border-right: none;
     }
-    
+}
 
+.ui.basic.segment:not(.secondary) {
+    background: white;
 }
 
 .jumbo {
@@ -55,5 +66,6 @@ pre, code {
     
     p {
         font-size: 1.3em;
+        line-height: 1.5em;
     }
 }

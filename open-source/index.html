@@ -4,22 +4,21 @@ heading: Blog
 name: Open source
 shorter: As a company built on open source, here are some of the internally-developed libraries we have contributed back to the community.
 ---
-<div id="overview">
     {% for projectName in site.open-source %}
     {% assign project = site.collections[projectName] %}
     {% assign pages = project.docs | sort: "order" %}
     {% assign firstPage = pages | first %}
     {% capture row %}{% if row == 'odd' %}even{% else %}odd{% endif %}{% endcapture %}
-    
-    <div class="ui {{row}} two column grid container">
-        {% if row == 'odd' %}
-            {% include feature-image.html project=project pages=pages %}
-            {% include feature-content.html project=project pages=pages firstPage=firstPage %}
-        {% else %}
-            {% include feature-content.html project=project pages=pages firstPage=firstPage %}
-            {% include feature-image.html project=project pages=pages %}
-        {% endif %}
+    <div class="ui segment">
+        <div class="ui {{row}} middle aligned grid">
+            {% if row == 'odd' %}
+                {% include feature-image.html project=project pages=pages %}
+                {% include feature-content.html project=project pages=pages firstPage=firstPage %}
+            {% else %}
+                {% include feature-content.html project=project pages=pages firstPage=firstPage %}
+                {% include feature-image.html project=project pages=pages %}
+            {% endif %}
+        </div>
     </div>
     {% endfor %}
-</div>
 

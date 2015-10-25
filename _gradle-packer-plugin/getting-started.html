@@ -3,6 +3,7 @@ layout: tabs
 title: Getting started
 project: gradle-packer-plugin
 order: 0
+icon: flag
 nav:
 - Introduction
 - Install
@@ -10,34 +11,34 @@ nav:
 ---
 {% assign project = site.collections[page.project] %}
 <a name="introduction"></a>
-<h3><span class="ui huge green ribbon label">Introduction</span></h3>
+<h1 class="ui {{project.accentColor}} dividing header">Introduction</h1>
 <p>A Gradle plugin witch automatically packs texture for a libgdx game, using libgdx texture packer. Before packing, the plugin can do some actions on the resources provided, such as:</p>
 <ul>
     <li>Resize images for variants</li>
     <li>Convert SVG to PNG images</li>
 </ul>
 <a name="install"></a>
-<h3><span class="ui huge green ribbon label">Install</span></h3>
+<h1 class="ui {{project.accentColor}} dividing header">Install</h3>
 <p>To apply the plugin, please add one of the following snippets to your build.gradle file:</p>
 
-<div class="ui tall inverted stacked grey segment">
-    <div class="ui top attached label">
-        <span class="violet right aligned detail"><div class="ui compact tiny violet label">Gradle >= 2.1</div></span>
-        build.gradle
+<div class="ui stacked segments">
+    <div class="ui thin basic secondary inverted grey segment">
+        <div class="ui secondary inverted tabs menu">
+            <span class="header item">build.gradle</span>
+            <a class="active item" data-tab="after">Gradle &ge; 2.1</a>
+            <a class="item" data-tab="before">Gradle < 2.1</a>
+        </div>
     </div>
-    {% highlight groovy %}
+    <div class="ui inverted grey segment">
+        <div class="ui active tab" data-tab="after">
+{% highlight groovy %}
 plugins {
     id "com.eowise.packer" version "{{ project.version }}"
 }
-    {% endhighlight %}
-</div>
-<div class="ui horizontal divider">Or</div>
-<div class="ui tall inverted stacked grey segment">
-    <div class="ui top attached label">
-        <span class="violet right aligned detail"><div class="ui compact tiny violet label">Gradle < 2.1</div></span>
-        build.gradle
-    </div>
-    {% highlight groovy %}
+{% endhighlight %}
+        </div>
+        <div class="ui tab" data-tab="before">
+{% highlight groovy %}
 buildscript {
     repositories {
         jcenter()
@@ -47,12 +48,14 @@ buildscript {
     }
 }
 apply plugin: 'packer'
-    {% endhighlight %}
+{% endhighlight %}
+        </div>
+    </div>
 </div>
 <a name="basic-usage"></a>
-<h3><span class="ui huge green ribbon label">Basic usage</span></h3>
+<h1 class="ui {{project.accentColor}} dividing header">Basic usage</h3>
 <p>A very basic scenario :</p>
-<div class="ui tall inverted stacked grey segment">
+<div class="ui inverted stacked grey segment">
     {% highlight groovy %}
 task packs(type: com.eowise.packer.Packer) {
   resourcesInputPath 'path/to/resources'
@@ -67,3 +70,6 @@ task packs(type: com.eowise.packer.Packer) {
     <li>Copy all file named 'pack.json' from the resouces path to the working directory</li>
     <li>Call the libgdx texture packer to packs the textures from the working directory into the 'path/to/atlases' directory (generally android assets directory)</li>
 </ol>
+<script type="text/javascript">
+    $('.tabs .item').tab();
+</script>

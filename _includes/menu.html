@@ -3,6 +3,6 @@
     {% for project in site.projects %}
     <a class="item" href="/projects/{{ project | slugify }}/">{{ project }}</a>
     {% endfor %}
-    <a class="item" href="/open-source/">Open source</a>
+    <a class="{% if page.project %}active {% endif %}item" href="/open-source/">Open source</a>
     <a class="item" href="/blog/">Blog</a>
 </div>

@@ -2,16 +2,16 @@
 <html>
     {% include head.html %}
     <body class="index">
-        <div id="root">
-            <div id="header" class="ui inverted basic blue segment">
+        <a name="top"></a>
+        <div id="root" class="ui raised container segments">
+            <div id="header" class="ui inverted basic segment">
             	<div class="ui large inverted secondary menu">
-            		<div class="ui container">
-            			{% include menu.html %}
-            		</div>
+            		{% include menu.html %}
                 </div>
             </div>
-            <div id ="description" class="ui very padded inverted basic blue segment">
-                <h1 class="ui inverted header container">{{ page.name }}<div class="sub header">{{ page.shorter }}</h1>
+            <div id ="description" class="ui very padded inverted tertiary blue segment">
+                <h1 class="ui header">{{ page.name }}</h1>
+                <p>{{ page.shorter }}</p>
             </div>
             {{ content }}
         </div>

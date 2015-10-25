@@ -21,3 +21,9 @@
 .ui.compact.label {
     padding: @verticalPadding / 3 @horizontalPadding / 2;
 }
+
+code.compact {
+    padding: @verticalPadding / 4 @horizontalPadding / 4;
+    border: 1px solid @backgroundColor;
+    border-radius: @borderRadius;
+}

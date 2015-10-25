@@ -10,31 +10,34 @@ projects:
 - City Evolution
 
 open-source:
-- gradle-blender
 - gradle-imagemagick
 - gradle-packer-plugin
+- gradle-blender
 
 collections:
   gradle-packer-plugin:
     output: true
     permalink: /open-source/:collection/:name.html
-    shorter: 
-    - A Gradle plugin witch automatically packs textures for a [libgdx](https://libgdx.badlogicgames.com/) game
-    - bla bla bla
+    shorter: A Gradle plugin witch automatically packs textures for a [libgdx](https://libgdx.badlogicgames.com/) game.
     github: https://github.com/eowise/gradle-packer-plugin
     version: 0.7.0
+    accentColor: green
   gradle-blender:
     output: true
     permalink: /open-source/:collection/:name.html
     type: open-source
     shorter:
+    - Easily automate [Blender](http://www.blender.org/) command line images and animations rendering with `RenderImage` and `RenderAnimation` tasks. 
+    - Use `FbxConv` task to automate FBX/Collada/Obj files conversion to more runtime friendly formats used by [libgdx](https://libgdx.badlogicgames.com/). This Gradle task internaly use [fbx-conv command line](https://github.com/libgdx/fbx-conv).
     github: https://github.com/eowise/gradle-blender
+    accentColor: orange
   gradle-imagemagick:
     output: true
     permalink: /open-source/:collection/:name.html
     type: open-source
     shorter: Gradle tasks to easy integrate ImageMagick
     github: https://github.com/eowise/gradle-imagemagick
+    accentColor: violet
 
 
 
@@ -42,4 +45,4 @@ collections:
 # Build settings
 markdown: kramdown
 permalink: /blog/:categories/:year/:month/:day/:title
-exclude: ["components", "node_modules"]
+exclude: ["components", "node_modules", "gulpfile.js", "semantic.json"]

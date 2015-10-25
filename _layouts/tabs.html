@@ -6,34 +6,44 @@
     {% include head.html %}
     
     <body class="index">
-        <div id="root">
-            <div id="header" class="ui inverted basic blue segment">
+        <a name="top"></a>
+        <div id="root" class="ui raised text container segments">
+            <div id="header" class="ui inverted basic segment">
             	<div class="ui large inverted secondary menu">
-            		<div class="ui container">
-            			{% include menu.html %}
-            		</div>
+            		{% include menu.html %}
                 </div>
             </div>
-            <div id ="description" class="ui very padded inverted basic blue segment">
-                <h1 class="ui inverted header container">{{ project.label }}<div class="sub header">{{ project.shorter }}</div></h1>
+            <div id ="description" class="ui inverted tertiary {{project.accentColor}} segment">
+                <div class="ui inverted secondary menu">
+                    <span class="header item" href="/">{{ project.label }}</span>
+                    <div class="right menu">
+                        {% for p in pages %}
+                        <a class="{% if p.order == page.order %}active {% endif %}item" href="/open-source/{{ project.label }}/{{ p.title | slugify }}.html">
+                            <i class="{{p.icon}} icon"></i>
+                            {{ p.title }} 
+                        </a>
+                        {% endfor %}
+                        {% if project.github %}
+                        <a class="item" href="{{ project.github }}" target="_blank">
+                            <i class="github icon"></i>
+                            Github
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-            <div class="ui basic segment">
-                <div class="ui text container">
-                    <div id="content" class="ui basic segment">
-                        <h2 class="ui header">{{ page.title }}</h2>
-                        {{ content }}
-                        <div class="ui right close dividing rail">
-                            <div class="ui secondary sticky vertical menu">
-                                {% for header in pages %}
-                                <a class="item" href="/open-source/{{ project.label }}/{{ header.title | slugify }}.html">{{ header.title }}</a>
-                                <div class="menu">
-                                    {% for item in header.nav %}
-                                    <a class="item" href="#{{ item | slugify }}">{{ item }}</a>
-                                    {% endfor %}
-                                </div>
-                                {% endfor %}
-                            </div>
+            <div id="content" class="ui basic segment">
+                {{ content }}
+                <div class="ui right close dividing rail">
+                    <div class="ui secondary sticky vertical inverted menu">
+                        {% for header in pages %}
+                        <a class="item" href="/open-source/{{ project.label }}/{{ header.title | slugify }}.html">{{ header.title }}</a>
+                        <div class="menu">
+                            {% for item in header.nav %}
+                            <a class="item" href="#{{ item | slugify }}">{{ item }}</a>
+                            {% endfor %}
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -41,6 +51,9 @@
         {% include footer.html %}
         <script type="text/javascript">
             jQuery('.ui.sticky').sticky({context: '#content'});
+            jQuery('.overlay').visibility({
+                type   : 'fixed',
+            });
         </script>
     </body>
 </html>

@@ -1,7 +1,0 @@
-- id: gradle-blender
-  shorter:
-  github: https://github.com/eowise/gradle-blender
-
-- id: gradle-imagemagick
-  shorter: Gradle tasks to easy integrate ImageMagick
-  github: https://github.com/eowise/gradle-imagemagick
