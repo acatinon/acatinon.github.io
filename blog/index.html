@@ -2,31 +2,15 @@
 layout: blog
 title: Blog
 ---
-<div class="ui grid container">
-    <div class="ui ten wide column items">
-    {% for post in site.posts %}
-        <div class="item">
-            <div class="content">
-                <h2 class="header"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                <p class="meta">{{ post.date }}</p>
-                <p class="description">{{ post.excerpt }}</p>
-            </div>
+<div class="ui segment items">
+{% for post in site.posts %}
+    <div class="item">
+        <div class="content">
+            <h2 class="header"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="meta">{{ post.date }}</p>
+            <p class="description">{{ post.excerpt }}</p>
         </div>
-    {% endfor %}
     </div>
-    <div class="ui six wide column">
-        	<h3 class="header">Categories</h3>
-        	<ul>
-        	  {% for category in site.categories %}
-        		<li>{{ category | first }}</li>
-        	  {% endfor %}
-        	</ul>
-        	<h3 class="header">Tags</h3>
-        	<ul>
-        	  {% for tag in site.tags %}
-        		<li>{{ tag | first }}</li>
-        	  {% endfor %}
-        	</ul>
-    </div>
+{% endfor %}
 </div>
 
