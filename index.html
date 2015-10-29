@@ -7,11 +7,12 @@ heading: We are a mobile games studio at Lyon, France.
     <a name="top"></a>
     <h2 class="ui header container">Our games</h2>
     <div class="ui container">
-        {% for project in site.projects %}
+        {% for projectName in site.projects %}
+        {% assign project = site.collections[projectName] %}
         <div class="row">
             <div class="small-12 medium-6 large-4 columns small-centered text-center">
                 <img src="/images/{{ project.id }}/icon.png" />
-                <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+                <h3><a href="/projects/{{ projectName }}/">{{ project.name }}</a></h3>
                 <p>{{ project.shorter }}</p>
             </div>
         </div>

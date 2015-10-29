@@ -1,7 +1,8 @@
 <a class="header item" href="/">Eowise</a>
 <div class="right menu">
-    {% for project in site.projects %}
-    <a class="item" href="/projects/{{ project | slugify }}/">{{ project }}</a>
+    {% for projectId in site.projects %}
+    {% assign project = site.collections[projectId] %}
+    <a class="item" href="/projects/{{projectId}}/">{{ project.name }}</a>
     {% endfor %}
     <a class="{% if page.project %}active {% endif %}item" href="/open-source/">Open source</a>
     <a class="item" href="/blog/">Blog</a>

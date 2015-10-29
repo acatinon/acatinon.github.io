@@ -7,7 +7,7 @@ url: "http://yourdomain.com"
 permalink: /blog/:year/:month/:day/:title
 
 projects:
-- City Evolution
+- city-evolution
 
 open-source:
 - gradle-imagemagick
@@ -38,7 +38,11 @@ collections:
     shorter: Gradle tasks to easy integrate ImageMagick
     github: https://github.com/eowise/gradle-imagemagick
     accentColor: violet
-
+  city-evolution:
+    output: true
+    permalink: /projects/:collection/:name.html
+    name: City Evolution
+    shorter: Build the biggest city ever in this very addictive game!
 
 
 
