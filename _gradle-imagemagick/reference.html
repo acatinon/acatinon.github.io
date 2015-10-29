@@ -12,8 +12,13 @@ nav:
 <a name="magick-task"></a>
 <h1 class="ui {{project.accentColor}} dividing header">Magick task</h1>
 <p>This task wrap the <a href="http://www.imagemagick.org/script/convert.php">ImageMagick convert</a> command line executable. To use the Magick task, you must provide a set of files to process with the <code class="compact">convert()</code> method, and a sequence of actions applied to theses files with the <code class="compact">actions()</code> method. You can also provide an output directory for processed files witch can be renamed on the fly. </p>
-<div class="ui inverted stacked grey segment">
-    <div class="ui top attached label">Exemple of Magick task witch divide all image by 2</div>
+<div class="ui stacked segments">
+    <div class="ui thin basic secondary inverted grey segment">
+        <div class="ui thin secondary inverted tabs menu">
+            <span class="header item">Exemple of Magick task witch divide all image by 2</span>
+        </div>
+    </div>
+    <div class="ui inverted stacked grey segment">
 {% highlight groovy %}
 task resize(type: com.eowise.imagemagick.tasks.Magick) {
     convert 'images', { include '*.png' }
@@ -26,6 +31,7 @@ task resize(type: com.eowise.imagemagick.tasks.Magick) {
     }
 }
 {% endhighlight %}
+    </div>
 </div>
 <div class="ui info icon message">
     <i class="info icon"></i>

@@ -1,3 +1,12 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.thin.menu {
+    min-height: auto;
+}
+
+.ui.thin.menu .item {
+    padding: @relativeMini / 2 @relativeSmall / 2;
+}
+

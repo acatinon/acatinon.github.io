@@ -2,7 +2,7 @@
 layout: project
 heading: Projects
 id: city-evolution
-name: City Evolution
+title: City Evolution
 shorter: Build the biggest city ever in this very addictive game!
 overview:
   - title: Test 1
