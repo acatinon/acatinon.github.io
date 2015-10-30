@@ -12,15 +12,38 @@
             </div>
             <div class="ui tertiary brown inverted very padded segment">
 				<h1 class="ui inverted header">{{ page.title }}
-					<div class="sub header">{{ page.date | localized_date: '%A %e %B %Y' }}</div>
+					<div class="sub header">
+						<div class="ui horizontal list">
+							<div class="item">
+								<i class="ui calendar outline icon"></i>
+								<div class="content">{{ page.date | date_to_long_string }}</div>
+							</div>
+						</div>
+					</div>
+					<div class="sub header">
+						<div class="ui horizontal list">
+						{% for category in page.categories %}
+							<div class="item">
+								<i class="ui list icon"></i>
+								<div class="content">{{ category }}</div>
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+					<div class="sub header">
+						<div class="ui horizontal list">
+			            {% for tag in page.tags %}
+				            <div class="item">
+								<i class="ui tag icon"></i>
+								<div class="content">{{ tag }}</div>
+							</div>
+			            {% endfor %}
+			            </div>
+					</div>
 				</h1>
+
 			</div>
 			<div class="ui segment">
-				<ul class="inline-list">
-				{% for tag in page.tags %}
-					<li><a href="#" class="radius label">{{ tag }}</a></li>
-				{% endfor %}
-				</ul>
 				{{ content }}
 				        <div id="disqus_thread"></div>
 				        <script type="text/javascript">
