@@ -1,0 +1,47 @@
+---
+layout: tabs
+title: Reference
+project: gradle-blender
+order: 1
+icon: book
+nav:
+- Magick task
+- Basic usage
+---
+{% assign project = site.collections | where: "label", page.project | first %}
+<p>The <code>gradle-blender</code> project is made of 3 Gradle tasks:</p>
+<ul class="ui list">
+    <li><a href="#fbx-conv">FbxConv</a></li>
+    <li><a href="#render-image">RenderImage</a></li>
+    <li><a href="#render-animation">RenderAnimation</a></li>
+</ul>
+<a name="fbx-conv"></a>
+<h1 class="ui {{project.accentColor}} dividing header">FbxConv task</h1>
+<p>This task wrap the <a href="http://www.imagemagick.org/script/convert.php">ImageMagick convert</a> command line executable. To use the Magick task, you must provide a set of files to process with the <code class="compact">convert()</code> method, and a sequence of actions applied to theses files with the <code class="compact">actions()</code> method. You can also provide an output directory for processed files witch can be renamed on the fly. </p>
+<h2 class="ui dividing header">Methods</h2>
+<h3 class="ui small header">
+    <code class="compact">convert(FileCollection files)</code>
+    <span class="sub header">or</span>
+    <code class="compact">convert(FileTree files)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p>Set all the .fbx files to be converted. This method takes either a Gradle <a href="https://docs.gradle.org/current/userguide/working_with_files.html#sec:file_collections">file collection</a> or a Gradle <a href="https://docs.gradle.org/current/userguide/working_with_files.html#sec:file_trees">file tree</a> as a parameter.</p>
+<h3 class="ui small header">
+    <code class="compact">into(File folder)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p>Set the folder where the converted files will be created.</p>
+<h3 class="ui small header">
+    <code class="compact">g3dj()</code>
+    <span class="sub header">,</span>
+    <code class="compact">g3db()</code>
+    <span class="sub header">or</span>
+    <code class="compact">fbx()</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p>Set the type of the output files.</p>
+<h3 class="ui header"><code class="compact">flip()</code></h3>
+<p>Flip the V texture coordinates. Equivalent to <code class="compact">-f</code> in the fbx-conv command line.</p>
+<h3 class="ui header"><code class="compact">pack()</code></h3>
+<p>Pack vertex colors to one float. Equivalent to <code class="compact">-p</code> in the fbx-conv command line.</p>
+<h3 class="ui header"><code class="compact">atlases(Closure atlases)</code></h3>

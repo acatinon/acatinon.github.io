@@ -1,3 +1,4 @@
 _site
 public/components
 .sass-cache
+.jekyll-metadata

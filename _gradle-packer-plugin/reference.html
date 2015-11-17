@@ -8,7 +8,7 @@ nav:
 - Task
 - Methods
 ---
-{% assign project = site.collections[page.project] %}
+{% assign project = site.collections | where: "label", page.project | first %}
 <a name="packer-task"></a>
 <h1 class="ui {{project.accentColor}} dividing header">Packer task</h1>
 <h2 class="ui dividing header">Methods</h2>

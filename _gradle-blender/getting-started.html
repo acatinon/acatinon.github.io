@@ -9,6 +9,6 @@ nav:
 - Install
 - Next step
 ---
-{% assign project = site.collections[page.project] %}
+{% assign project = site.collections | where: "label", page.project | first %}
 <h1 class="ui {{project.accentColor}} dividing header">Introduction</h1>
 <p>Hello!</p>

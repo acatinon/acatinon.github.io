@@ -9,7 +9,7 @@ nav:
 - Install
 - Basic usage
 ---
-{% assign project = site.collections[page.project] %}
+{% assign project = site.collections | where: "label", page.project | first %}
 <a name="introduction"></a>
 <h1 class="ui {{project.accentColor}} dividing header">Introduction</h1>
 <p>A Gradle plugin witch automatically packs texture for a libgdx game, using libgdx texture packer. Before packing, the plugin can do some actions on the resources provided, such as:</p>

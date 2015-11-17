@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% assign project = site.collections[page.project] %}
+{% assign project = site.collections | where: "label", page.project | first %}
 {% assign pages = project.docs | sort: "order" %}
 {% assign section = project.nav | where: "slug", page.id | first %}
 <html>

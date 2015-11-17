@@ -48,5 +48,6 @@ collections:
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 permalink: /blog/:categories/:year/:month/:day/:title
 exclude: ["components", "node_modules", "gulpfile.js", "semantic.json"]

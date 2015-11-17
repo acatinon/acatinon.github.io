@@ -5,7 +5,7 @@ title: Open source
 shorter: As a company built on open source, here are some of the internally-developed libraries we have contributed back to the community.
 ---
     {% for projectName in site.open-source %}
-    {% assign project = site.collections[projectName] %}
+    {% assign project = site.collections | where: "label", projectName | first %}
     {% assign pages = project.docs | sort: "order" %}
     {% assign firstPage = pages | first %}
     {% capture row %}{% if row == 'odd' %}even{% else %}odd{% endif %}{% endcapture %}
