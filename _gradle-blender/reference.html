@@ -33,15 +33,97 @@ nav:
 <p>Set the folder where the converted files will be created.</p>
 <h3 class="ui small header">
     <code class="compact">g3dj()</code>
-    <span class="sub header">,</span>
-    <code class="compact">g3db()</code>
     <span class="sub header">or</span>
-    <code class="compact">fbx()</code>
+    <code class="compact">g3db()</code>
     <div class="ui horizontal basic red left pointing label">required</div>
 </h3>
-<p>Set the type of the output files.</p>
-<h3 class="ui header"><code class="compact">flip()</code></h3>
-<p>Flip the V texture coordinates. Equivalent to <code class="compact">-f</code> in the fbx-conv command line.</p>
-<h3 class="ui header"><code class="compact">pack()</code></h3>
-<p>Pack vertex colors to one float. Equivalent to <code class="compact">-p</code> in the fbx-conv command line.</p>
-<h3 class="ui header"><code class="compact">atlases(Closure atlases)</code></h3>
+<p>Use one of the above method to set the type of the output files, either G3DJ or G3DB.</p>
+<h3 class="ui small header">
+    <code class="compact">flip()</code>
+    <span class="sub header">,</span>
+    <code class="compact">pack()</code>
+    <span class="sub header">and other optionals methods</span>
+</h3>
+<p>It is possible to set other <code>fbx-conv</code> flags with theses methods:</p>
+<table class="ui small compact celled table">
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="top aligned">
+            <td><code class="compact">flip()</code></td>
+            <td>
+                <p>Flip the V texture coordinates.</p>
+                <div class="ui basic label"><i class="blue info icon"></i>fbx-conv command line flag<code class="detail">-f</code></div>
+            </td>
+        </tr>
+        <tr class="top aligned">
+            <td><code class="compact">pack()</code></td>
+            <td>
+                <p>Pack vertex colors to one float.</p>
+                <div class="ui basic label"><i class="blue info icon"></i>fbx-conv command line flag<code class="detail">-p</code></div>
+            </td>
+        </tr>
+        <tr class="top aligned">
+            <td><code class="compact">maxVertices(String size)</code></td>
+            <td>
+                <p>The maximum amount of vertices or indices a mesh may contain.</p>
+                <div class="ui basic label"><i class="blue info icon"></i>fbx-conv command line flag<code class="detail">-m &lt;size&gt;</code></div>
+            </td>
+        </tr>
+        <tr class="top aligned">
+            <td><code class="compact">maxBones(String size)</code></td>
+            <td>
+                <p>The maximum amount of bones a nodepart can contain.</p>
+                <div class="ui basic label"><i class="blue info icon"></i>fbx-conv command line flag<code class="detail">-b &lt;size&gt;</code></div>
+            </td>
+        </tr>
+        <tr class="top aligned">
+            <td><code class="compact">maxBoneWeights(String size)</code></td>
+            <td>
+                <p>The maximum amount of bone weights per vertex.</p>
+                <div class="ui basic label"><i class="blue info icon"></i>fbx-conv command line flag<code class="detail">-w &lt;size&gt;</code></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<a name="render-image"></a>
+<h1 class="ui {{project.accentColor}} dividing header">RenderImage task</h1>
+<p></p>
+<h2 class="ui dividing header">Methods</h2>
+<h3 class="ui small header">
+    <code class="compact">render(String sceneName)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p></p>
+<h3 class="ui small header">
+    <code class="compact">from(File file)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p></p>
+<h3 class="ui small header">
+    <code class="compact">into(File path)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p></p>
+<h3 class="ui small header">
+    <code class="compact">rename(Closure c)</code>
+</h3>
+<p></p>
+<a name="render-animation"></a>
+<h1 class="ui {{project.accentColor}} dividing header">RenderAnimation task</h1>
+<p></p>
+<h2 class="ui dividing header">Methods</h2>
+<h3 class="ui small header">
+    <code class="compact">start(int value)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p></p>
+<h3 class="ui small header">
+    <code class="compact">end(int value)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p></p>
