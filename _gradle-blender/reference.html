@@ -10,14 +10,30 @@ nav:
 ---
 {% assign project = site.collections | where: "label", page.project | first %}
 <p>The <code>gradle-blender</code> project is made of 3 Gradle tasks:</p>
-<ul class="ui list">
-    <li><a href="#fbx-conv">FbxConv</a></li>
-    <li><a href="#render-image">RenderImage</a></li>
-    <li><a href="#render-animation">RenderAnimation</a></li>
-</ul>
+<div class="ui bulleted list">
+    <div class="item">
+        <div class="content">
+            <a href="reference.html#fbx-conv" class="header">com.eowise.blender.fbxconv.FbxConv</a>
+            <div class="description">Convert FBX files to G3DJ or G3DB.</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="content">
+            <a href="reference.html#render-image" class="header">com.eowise.blender.render.RenderImage</a>
+            <div class="description">Render a Blender scene.</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="content">
+            <a href="reference.html#render-animation" class="header">com.eowise.blender.render.RenderAnimation</a>
+            <div class="description">Render a Blender animation.</div>
+        </div>
+    </div>
+</div>
 <a name="fbx-conv"></a>
 <h1 class="ui {{project.accentColor}} dividing header">FbxConv task</h1>
-<p>This task wrap the <a href="http://www.imagemagick.org/script/convert.php">ImageMagick convert</a> command line executable. To use the Magick task, you must provide a set of files to process with the <code class="compact">convert()</code> method, and a sequence of actions applied to theses files with the <code class="compact">actions()</code> method. You can also provide an output directory for processed files witch can be renamed on the fly. </p>
+<p>This task wrap the <a href="https://github.com/libgdx/fbx-conv">libGDX fbx-conv</a> command line executable. You specify the files you want to convert, where to write the converted files, and the format in witch you want to convert the files.</p>
+<p>For instance, the task below take all the <code>.fbx</code> files in the <span class="ui basic compact label"><i class="grey folder outline icon"></i>resources</span> folder and convert them to the G3DB format in the <span class="ui basic compact label"><i class="grey folder outline icon"></i>assets/3d</span> folder:</p>
 <div class="ui stacked segments">
     <div class="ui inverted stacked grey segment">
 {% highlight groovy %}
@@ -29,6 +45,7 @@ task fbxConv(type: com.eowise.blender.fbxconv.FbxConv) {
 {% endhighlight %}
     </div>
 </div>
+<p>You can use the above methods to configure a <code>com.eowise.blender.fbxconv.FbxConv</code> task.</p>
 <h2 class="ui dividing header">Methods</h2>
 <h3 class="ui small header">
     <code class="compact">convert(FileCollection files)</code>
@@ -103,23 +120,23 @@ task fbxConv(type: com.eowise.blender.fbxconv.FbxConv) {
 </table>
 <a name="render-image"></a>
 <h1 class="ui {{project.accentColor}} dividing header">RenderImage task</h1>
-<p></p>
+<p>This task call the <a href="http://www.blender.org/manual/render/workflows/command_line.html">Blender command line</a> in order to render a scene.</p>
 <h2 class="ui dividing header">Methods</h2>
 <h3 class="ui small header">
     <code class="compact">render(String sceneName)</code>
     <div class="ui horizontal basic red left pointing label">required</div>
 </h3>
-<p></p>
+<p>Set the scene you want to render.</p>
 <h3 class="ui small header">
     <code class="compact">from(File file)</code>
     <div class="ui horizontal basic red left pointing label">required</div>
 </h3>
-<p></p>
+<p>Set the <code>.blend</code> file that contains the scene you want to render.</p>
 <h3 class="ui small header">
     <code class="compact">into(File path)</code>
     <div class="ui horizontal basic red left pointing label">required</div>
 </h3>
-<p></p>
+<p>Set the folder where the rendered asset will be writen.</p>
 <h3 class="ui small header">
     <code class="compact">rename(Closure c)</code>
 </h3>
