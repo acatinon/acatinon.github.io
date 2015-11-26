@@ -10,14 +10,12 @@ nav:
 - Basic usage
 ---
 {% assign project = site.collections | where: "label", page.project | first %}
-<a name="introduction"></a>
 <h1 class="ui {{project.accentColor}} dividing header">Introduction</h1>
 <p>A Gradle plugin witch automatically packs texture for a libgdx game, using libgdx texture packer. Before packing, the plugin can do some actions on the resources provided, such as:</p>
 <ul>
     <li>Resize images for variants</li>
     <li>Convert SVG to PNG images</li>
 </ul>
-<a name="install"></a>
 <h1 class="ui {{project.accentColor}} dividing header">Install</h3>
 <p>To apply the plugin, please add one of the following snippets to your build.gradle file:</p>
 
@@ -51,7 +49,6 @@ buildscript {
         </div>
     </div>
 </div>
-<a name="basic-usage"></a>
 <h1 class="ui {{project.accentColor}} dividing header">Basic usage</h3>
 <p>A very basic scenario :</p>
 <div class="ui inverted stacked grey segment">

@@ -11,4 +11,66 @@ nav:
 ---
 {% assign project = site.collections | where: "label", page.project | first %}
 <h1 class="ui {{project.accentColor}} dividing header">Introduction</h1>
-<p>Hello!</p>
+<p>A Gradle plugin witch automatically packs texture for a libgdx game, using libgdx texture packer. Before packing, the plugin can do some actions on the resources provided, such as:</p>
+<ul>
+    <li>Resize images for variants</li>
+    <li>Convert SVG to PNG images</li>
+</ul>
+<h1 class="ui {{project.accentColor}} dividing header">Install</h3>
+<p>To apply the plugin, please add one of the following snippets to your build.gradle file:</p>
+
+<div class="ui stacked segments">
+    <div class="ui thin basic secondary inverted grey segment">
+        <div class="ui thin secondary inverted tabs menu">
+            <span class="header item">build.gradle</span>
+            <a class="active item" data-tab="after">Gradle &ge; 2.1</a>
+            <a class="item" data-tab="before">Gradle < 2.1</a>
+        </div>
+    </div>
+    <div class="ui inverted grey segment">
+        <div class="ui active tab" data-tab="after">
+{% highlight groovy %}
+plugins {
+    id 'com.eowise.gradle-blender' version '{{ project.version }}'
+}
+{% endhighlight %}
+        </div>
+        <div class="ui tab" data-tab="before">
+{% highlight groovy %}
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.eowise:gradle-blender:{{ project.version }}'
+    }
+}
+{% endhighlight %}
+        </div>
+    </div>
+</div>
+<h1 class="ui {{project.accentColor}} dividing header">Getting started</h3>
+<p>This project is compound of three Gradle tasks classes. Depending of your need, create a task of the corresponding type:</p>
+<div class="ui bulleted list">
+    <div class="item">
+        <div class="content">
+            <a href="reference.html#fbx-conv" class="header">com.eowise.blender.fbxconv.FbxConv</a>
+            <div class="description">Convert FBX files to G3DJ or G3DB.</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="content">
+            <a href="reference.html#render-image" class="header">com.eowise.blender.render.RenderImage</a>
+            <div class="description">Render a Blender scene.</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="content">
+            <a href="reference.html#render-animation" class="header">com.eowise.blender.render.RenderAnimation</a>
+            <div class="description">Render a Blender animation.</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.tabs .item').tab();
+</script>

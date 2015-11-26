@@ -18,6 +18,17 @@ nav:
 <a name="fbx-conv"></a>
 <h1 class="ui {{project.accentColor}} dividing header">FbxConv task</h1>
 <p>This task wrap the <a href="http://www.imagemagick.org/script/convert.php">ImageMagick convert</a> command line executable. To use the Magick task, you must provide a set of files to process with the <code class="compact">convert()</code> method, and a sequence of actions applied to theses files with the <code class="compact">actions()</code> method. You can also provide an output directory for processed files witch can be renamed on the fly. </p>
+<div class="ui stacked segments">
+    <div class="ui inverted stacked grey segment">
+{% highlight groovy %}
+task fbxConv(type: com.eowise.blender.fbxconv.FbxConv) {
+    convert fileTree('resources', { include: '*.fbx'})
+    into file('assets/3d')
+    g3db()
+}
+{% endhighlight %}
+    </div>
+</div>
 <h2 class="ui dividing header">Methods</h2>
 <h3 class="ui small header">
     <code class="compact">convert(FileCollection files)</code>
