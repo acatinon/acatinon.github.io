@@ -33,18 +33,6 @@
             </div>
             <div id="content" class="ui basic segment">
                 {{ content }}
-                <div class="ui right close dividing rail">
-                    <div class="ui secondary sticky vertical inverted menu">
-                        {% for header in pages %}
-                        <a class="item" href="/open-source/{{ project.label }}/{{ header.title | slugify }}.html">{{ header.title }}</a>
-                        <div class="menu">
-                            {% for item in header.nav %}
-                            <a class="item" href="#{{ item | slugify }}">{{ item }}</a>
-                            {% endfor %}
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
             </div>
         </div>
         {% include footer.html %}
