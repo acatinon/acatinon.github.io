@@ -1,0 +1,8 @@
+{% highlight groovy %}
+task convertFbx(type: com.eowise.blender.fbxconv.FbxConv) {
+    from 'resources'
+    include '*.fbx'
+    into 'assets/3d'
+    g3db()
+}
+{% endhighlight %}

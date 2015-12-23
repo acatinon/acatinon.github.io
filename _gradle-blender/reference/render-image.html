@@ -1,0 +1,28 @@
+---
+layout: tabs
+title: RenderImage
+project: gradle-blender
+---
+<h1 class="ui {{project.accentColor}} dividing header">RenderImage task</h1>
+<p>This task call the <a href="http://www.blender.org/manual/render/workflows/command_line.html">Blender command line</a> in order to render a scene.</p>
+<div class="ui stacked segments">
+    <div class="ui inverted stacked grey segment">
+{% include examples/gradle-blender/render-image.html %}
+    </div>
+</div>
+<h2 class="ui dividing header">Methods</h2>
+<h3 class="ui small header">
+    <code class="compact">scene(String sceneName)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p>Set the scene you want to render.</p>
+<h3 class="ui small header">
+    <code class="compact">from(Object file)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p>Set the <code>.blend</code> file that contains the scene you want to render. The given file is evaluated as per Gradle <a href="https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)">Project.file()</a>.</p>
+<h3 class="ui small header">
+    <code class="compact">into(Object file)</code>
+    <div class="ui horizontal basic red left pointing label">required</div>
+</h3>
+<p>Set the file where the rendered asset will be writen. Just like the <code>from</code> method, the given file is evaluated as per Gradle <a href="https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)">Project.file()</a>.</p>

@@ -1,0 +1,76 @@
+---
+layout: tabs
+title: Getting started
+project: gradle-blender
+order: 0
+icon: flag
+---
+{% assign project = site.collections | where: "label", page.project | first %}
+<h1 class="ui {{project.accentColor}} dividing header">Introduction</h1>
+<p><a href="http://www.blender.org/">Blender</a> is often used to create applications or games assets. But when the number of these assets grows, we need to improve and automate these tasks.</p>
+<p>This project rely on the <a href="https://gradle.org/">Gradle</a> build automation system to make asset creation from Blender easier. It allows to automate the following tasks:</p>
+<ul>
+    <li>Blender scene rendering</li>
+    <li>Blender animation rendering</li>
+    <li>FBX to libGDX formats conversion</li>
+</ul>
+<h1 class="ui {{project.accentColor}} dividing header">Install</h3>
+<p>To enable the <code>gradle-blender</code> Gradle tasks, please add one of the following snippets to your build.gradle file:</p>
+<div class="ui stacked segments">
+    <div class="ui thin basic secondary inverted grey segment">
+        <div class="ui thin secondary inverted tabs menu">
+            <span class="header item">build.gradle</span>
+            <a class="active item" data-tab="after">Gradle &ge; 2.1</a>
+            <a class="item" data-tab="before">Gradle < 2.1</a>
+        </div>
+    </div>
+    <div class="ui inverted grey segment">
+        <div class="ui active tab" data-tab="after">
+{% highlight groovy %}
+plugins {
+    id 'com.eowise.blender' version '{{ project.version }}'
+}
+{% endhighlight %}
+        </div>
+        <div class="ui tab" data-tab="before">
+{% highlight groovy %}
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.eowise:blender:{{ project.version }}'
+    }
+}
+{% endhighlight %}
+        </div>
+    </div>
+</div>
+<h1 class="ui {{project.accentColor}} dividing header">Getting started</h3>
+<p>This project is compound of three Gradle tasks classes. Depending of your need described below, create a task of the corresponding type.</p>
+{% include examples/gradle-blender/summary.html %}
+<p>The links in the table above point to the corresponding task reference. There is also a simple example for each task below:</p>
+<div class="ui stacked segments">
+    <div class="ui thin basic secondary inverted grey segment">
+        <div class="ui thin secondary inverted tabs menu">
+            <span class="header item">Basic examples</span>
+            <a class="active item" data-tab="RenderImage">RenderImage</a>
+            <a class="item" data-tab="RenderAnimation">RenderAnimation</a>
+            <a class="item" data-tab="FbxConv">FbxConv</a>
+        </div>
+    </div>
+    <div class="ui inverted grey segment">
+        <div class="ui active tab" data-tab="RenderImage">
+{% include examples/gradle-blender/render-image.html %}
+        </div>
+        <div class="ui tab" data-tab="RenderAnimation">
+{% include examples/gradle-blender/render-animation.html %}
+        </div>
+        <div class="ui tab" data-tab="FbxConv">
+{% include examples/gradle-blender/fbx-conv.html %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.tabs .item').tab();
+</script>

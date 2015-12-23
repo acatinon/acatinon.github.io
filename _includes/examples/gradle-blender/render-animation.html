@@ -1,0 +1,9 @@
+{% highlight groovy %}
+task renderAnimation(type: com.eowise.blender.render.RenderAnimation) {
+    scene 'HeroRun'
+    from '3d/actors.blend'
+    into 'assets/actors/'
+    start 1
+    end 100
+}
+{% endhighlight %}

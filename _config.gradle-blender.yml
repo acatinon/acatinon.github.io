@@ -1,0 +1,53 @@
+# Site settings
+title: Your awesome title
+email: your-email@domain.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+# baseurl: "/gradle-blender"
+baseurl: ""
+url: "http://yourdomain.com"
+
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      published: false
+
+collections:
+  gradle-packer-plugin:
+    output: false
+    permalink: /open-source/:collection/:name.html
+    shorter: A Gradle plugin witch automatically packs textures for a [libgdx](https://libgdx.badlogicgames.com/) game.
+    github: https://github.com/eowise/gradle-packer-plugin
+    version: 0.7.0
+    accentColor: green
+  gradle-blender:
+    output: true
+    permalink: /:path.html
+    shorter:
+    - Easily automate [Blender](http://www.blender.org/) command line images and animations rendering with `RenderImage` and `RenderAnimation` tasks. 
+    - Use `FbxConv` task to automate FBX/Collada/Obj files conversion to more runtime friendly formats used by [libgdx](https://libgdx.badlogicgames.com/). This Gradle task internaly use [fbx-conv command line](https://github.com/libgdx/fbx-conv).
+    github: https://github.com/eowise/gradle-blender
+    version: 0.5.1
+    accentColor: orange
+  gradle-imagemagick:
+    output: false
+    permalink: /open-source/:collection/:name.html
+    shorter: Gradle tasks to easy integrate ImageMagick
+    github: https://github.com/eowise/gradle-imagemagick
+    version: 0.5.0
+    accentColor: violet
+  city-evolution:
+    output: false
+    permalink: /projects/:collection/:name.html
+    name: City Evolution
+    shorter: Build the biggest city ever in this very addictive game!
+
+
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+exclude: ["components", "node_modules", "gulpfile.js", "semantic.json", "package.json", "index.html", "blog", "open-source", "images/city-evolution"]

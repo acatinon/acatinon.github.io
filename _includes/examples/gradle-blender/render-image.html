@@ -1,0 +1,7 @@
+{% highlight groovy %}
+task renderImage(type: com.eowise.blender.render.RenderImage) {
+    scene 'Hero'
+    from '3d/actors.blend'
+    into 'assets/actors/hero.png'
+}
+{% endhighlight %}
