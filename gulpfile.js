@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var jquery = require('gulp-jquery');
 var shell = require('gulp-shell');
-var buildSemantic = require('./components/semantic/tasks/build');
+//var buildSemantic = require('./components/semantic/tasks/build');
 
 gulp.task('default', function() {
     gulp.src("./components/semantic/dist/semantic.min.css")
@@ -20,6 +20,8 @@ gulp.task('jquery', function () {
     // creates ./public/vendor/jquery.custom.js 
 });
 
-gulp.task('buildSemantic', buildSemantic);
+//gulp.task('buildSemantic', buildSemantic);
 
 gulp.task('buildJekyll', shell.task('jekyll build'));
+
+gulp.task('buildJekyllBlender', shell.task('JEKYLL_ENV=standalone jekyll build --config _config.gradle-blender.yml'));

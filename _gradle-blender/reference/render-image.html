@@ -3,6 +3,7 @@ layout: tabs
 title: RenderImage
 project: gradle-blender
 ---
+{% assign project = site.collections | where: "label", page.project | first %}
 <h1 class="ui {{project.accentColor}} dividing header">RenderImage task</h1>
 <p>This task call the <a href="http://www.blender.org/manual/render/workflows/command_line.html">Blender command line</a> in order to render a scene.</p>
 <div class="ui stacked segments">

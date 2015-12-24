@@ -9,20 +9,3 @@
     padding: 0.5em;
 }
 
-.ui.positive.icon.message {
-    border-top: @coloredBorderSize solid @green;
-    background: none;
-    
-    a {
-        color: @green;
-    }
-}
-
-.ui.info.icon.message {
-    border-top: @coloredBorderSize solid @blue;
-    background: none;
-    
-    a {
-        color: @blue;
-    }
-}

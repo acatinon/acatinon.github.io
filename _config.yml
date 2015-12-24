@@ -24,12 +24,12 @@ collections:
     accentColor: green
   gradle-blender:
     output: true
-    permalink: /open-source/:collection/:name.html
+    permalink: /open-source/:collection/:path.html
     shorter:
     - Easily automate [Blender](http://www.blender.org/) command line images and animations rendering with `RenderImage` and `RenderAnimation` tasks. 
     - Use `FbxConv` task to automate FBX/Collada/Obj files conversion to more runtime friendly formats used by [libgdx](https://libgdx.badlogicgames.com/). This Gradle task internaly use [fbx-conv command line](https://github.com/libgdx/fbx-conv).
     github: https://github.com/eowise/gradle-blender
-    version: 0.3.0
+    version: 0.5.1
     accentColor: orange
   gradle-imagemagick:
     output: true
@@ -50,4 +50,4 @@ collections:
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:categories/:year/:month/:day/:title
-exclude: ["components", "node_modules", "gulpfile.js", "semantic.json"]
+exclude: ["components", "node_modules", "gulpfile.js", "semantic.json", "package.json"]

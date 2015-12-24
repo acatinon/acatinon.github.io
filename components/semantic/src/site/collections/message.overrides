@@ -2,4 +2,33 @@
     User Variable Overrides
 *******************************/
 
+.ui.icon.message {
+    background: none;
+}
 
+.ui.success.icon.message,
+.ui.positive.icon.message
+{
+    a, .icon {
+        color: @green;
+    }
+}
+
+.ui.info.icon.message {
+    a, .icon {
+        color: @blue;
+    }
+}
+
+.ui.warning.icon.message {
+    a, .icon {
+        color: @orange;
+    }
+}
+
+.ui.error.icon.message,
+.ui.negative.icon.message {
+    a, .icon {
+        color: @red;
+    }
+}
